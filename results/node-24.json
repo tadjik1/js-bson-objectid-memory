@@ -1,0 +1,712 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-19T09:30:16.384Z",
+  "metric": "post-GC heapUsed + arrayBuffers delta",
+  "environment": {
+    "node": "24.19.0",
+    "v8": "13.6.233.17-node.51",
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M1 Pro",
+    "totalSystemMemoryBytes": 17179869184,
+    "github": null
+  },
+  "packages": {
+    "before": "7.3.1",
+    "after": "7.3.2"
+  },
+  "repetitions": 3,
+  "cases": [
+    {
+      "name": "objectid-generated",
+      "label": "new ObjectId()",
+      "level": "per-instance",
+      "unit": "ObjectId",
+      "count": 1000000,
+      "samples": {
+        "before": [
+          {
+            "implementation": "before",
+            "workload": "objectid-generated",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12660928,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30630524,
+              "rss": 61865984
+            },
+            "after": {
+              "heapUsed": 148756992,
+              "arrayBuffers": 33960380,
+              "liveMemory": 182717372,
+              "rss": 359071744
+            },
+            "deltaBytes": 152086848,
+            "bytesPerUnit": 152.086848
+          },
+          {
+            "implementation": "before",
+            "workload": "objectid-generated",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12660960,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30630556,
+              "rss": 61702144
+            },
+            "after": {
+              "heapUsed": 148757024,
+              "arrayBuffers": 33960380,
+              "liveMemory": 182717404,
+              "rss": 329908224
+            },
+            "deltaBytes": 152086848,
+            "bytesPerUnit": 152.086848
+          },
+          {
+            "implementation": "before",
+            "workload": "objectid-generated",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12660960,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30630556,
+              "rss": 62078976
+            },
+            "after": {
+              "heapUsed": 148757024,
+              "arrayBuffers": 33960380,
+              "liveMemory": 182717404,
+              "rss": 330153984
+            },
+            "deltaBytes": 152086848,
+            "bytesPerUnit": 152.086848
+          }
+        ],
+        "after": [
+          {
+            "implementation": "after",
+            "workload": "objectid-generated",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12603488,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30573182,
+              "rss": 61685760
+            },
+            "after": {
+              "heapUsed": 68701152,
+              "arrayBuffers": 17969699,
+              "liveMemory": 86670851,
+              "rss": 172326912
+            },
+            "deltaBytes": 56097669,
+            "bytesPerUnit": 56.097669
+          },
+          {
+            "implementation": "after",
+            "workload": "objectid-generated",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12603488,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30573182,
+              "rss": 61751296
+            },
+            "after": {
+              "heapUsed": 68701152,
+              "arrayBuffers": 17969699,
+              "liveMemory": 86670851,
+              "rss": 173178880
+            },
+            "deltaBytes": 56097669,
+            "bytesPerUnit": 56.097669
+          },
+          {
+            "implementation": "after",
+            "workload": "objectid-generated",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12603488,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30573182,
+              "rss": 61784064
+            },
+            "after": {
+              "heapUsed": 68701152,
+              "arrayBuffers": 17969699,
+              "liveMemory": 86670851,
+              "rss": 173916160
+            },
+            "deltaBytes": 56097669,
+            "bytesPerUnit": 56.097669
+          }
+        ]
+      },
+      "median": {
+        "before": {
+          "deltaBytes": 152086848,
+          "bytesPerUnit": 152.086848
+        },
+        "after": {
+          "deltaBytes": 56097669,
+          "bytesPerUnit": 56.097669
+        },
+        "reductionPercent": 63.11471390346652
+      }
+    },
+    {
+      "name": "objectid-hex",
+      "label": "new ObjectId(hex)",
+      "level": "per-instance",
+      "unit": "ObjectId",
+      "count": 1000000,
+      "samples": {
+        "before": [
+          {
+            "implementation": "before",
+            "workload": "objectid-hex",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12660960,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30630556,
+              "rss": 61849600
+            },
+            "after": {
+              "heapUsed": 148747288,
+              "arrayBuffers": 33960380,
+              "liveMemory": 182707668,
+              "rss": 333955072
+            },
+            "deltaBytes": 152077112,
+            "bytesPerUnit": 152.077112
+          },
+          {
+            "implementation": "before",
+            "workload": "objectid-hex",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12661032,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30630628,
+              "rss": 62029824
+            },
+            "after": {
+              "heapUsed": 148753704,
+              "arrayBuffers": 33960380,
+              "liveMemory": 182714084,
+              "rss": 333889536
+            },
+            "deltaBytes": 152083456,
+            "bytesPerUnit": 152.083456
+          },
+          {
+            "implementation": "before",
+            "workload": "objectid-hex",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12660960,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30630556,
+              "rss": 62013440
+            },
+            "after": {
+              "heapUsed": 148753632,
+              "arrayBuffers": 33960380,
+              "liveMemory": 182714012,
+              "rss": 334102528
+            },
+            "deltaBytes": 152083456,
+            "bytesPerUnit": 152.083456
+          }
+        ],
+        "after": [
+          {
+            "implementation": "after",
+            "workload": "objectid-hex",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12603488,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30573182,
+              "rss": 61767680
+            },
+            "after": {
+              "heapUsed": 68666776,
+              "arrayBuffers": 17969694,
+              "liveMemory": 86636470,
+              "rss": 160038912
+            },
+            "deltaBytes": 56063288,
+            "bytesPerUnit": 56.063288
+          },
+          {
+            "implementation": "after",
+            "workload": "objectid-hex",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12603488,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30573182,
+              "rss": 61620224
+            },
+            "after": {
+              "heapUsed": 68666776,
+              "arrayBuffers": 17969694,
+              "liveMemory": 86636470,
+              "rss": 159449088
+            },
+            "deltaBytes": 56063288,
+            "bytesPerUnit": 56.063288
+          },
+          {
+            "implementation": "after",
+            "workload": "objectid-hex",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12603456,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30573150,
+              "rss": 61702144
+            },
+            "after": {
+              "heapUsed": 68666744,
+              "arrayBuffers": 17969694,
+              "liveMemory": 86636438,
+              "rss": 159825920
+            },
+            "deltaBytes": 56063288,
+            "bytesPerUnit": 56.063288
+          }
+        ]
+      },
+      "median": {
+        "before": {
+          "deltaBytes": 152083456,
+          "bytesPerUnit": 152.083456
+        },
+        "after": {
+          "deltaBytes": 56063288,
+          "bytesPerUnit": 56.063288
+        },
+        "reductionPercent": 63.136497897575396
+      }
+    },
+    {
+      "name": "objectid-uint8array",
+      "label": "new ObjectId(uint8Array)",
+      "level": "per-instance",
+      "unit": "ObjectId",
+      "count": 1000000,
+      "samples": {
+        "before": [
+          {
+            "implementation": "before",
+            "workload": "objectid-uint8array",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12660960,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30630556,
+              "rss": 61718528
+            },
+            "after": {
+              "heapUsed": 244703336,
+              "arrayBuffers": 29969596,
+              "liveMemory": 274672932,
+              "rss": 602505216
+            },
+            "deltaBytes": 244042376,
+            "bytesPerUnit": 244.042376
+          },
+          {
+            "implementation": "before",
+            "workload": "objectid-uint8array",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12660928,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30630524,
+              "rss": 61784064
+            },
+            "after": {
+              "heapUsed": 244703304,
+              "arrayBuffers": 29969596,
+              "liveMemory": 274672900,
+              "rss": 602636288
+            },
+            "deltaBytes": 244042376,
+            "bytesPerUnit": 244.042376
+          },
+          {
+            "implementation": "before",
+            "workload": "objectid-uint8array",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12660960,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30630556,
+              "rss": 61784064
+            },
+            "after": {
+              "heapUsed": 244703336,
+              "arrayBuffers": 29969596,
+              "liveMemory": 274672932,
+              "rss": 602570752
+            },
+            "deltaBytes": 244042376,
+            "bytesPerUnit": 244.042376
+          }
+        ],
+        "after": [
+          {
+            "implementation": "after",
+            "workload": "objectid-uint8array",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12603488,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30573182,
+              "rss": 61652992
+            },
+            "after": {
+              "heapUsed": 68643960,
+              "arrayBuffers": 17969694,
+              "liveMemory": 86613654,
+              "rss": 227393536
+            },
+            "deltaBytes": 56040472,
+            "bytesPerUnit": 56.040472
+          },
+          {
+            "implementation": "after",
+            "workload": "objectid-uint8array",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12603456,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30573150,
+              "rss": 61554688
+            },
+            "after": {
+              "heapUsed": 68643928,
+              "arrayBuffers": 17969694,
+              "liveMemory": 86613622,
+              "rss": 227606528
+            },
+            "deltaBytes": 56040472,
+            "bytesPerUnit": 56.040472
+          },
+          {
+            "implementation": "after",
+            "workload": "objectid-uint8array",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12603488,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30573182,
+              "rss": 61718528
+            },
+            "after": {
+              "heapUsed": 68643960,
+              "arrayBuffers": 17969694,
+              "liveMemory": 86613654,
+              "rss": 227016704
+            },
+            "deltaBytes": 56040472,
+            "bytesPerUnit": 56.040472
+          }
+        ]
+      },
+      "median": {
+        "before": {
+          "deltaBytes": 244042376,
+          "bytesPerUnit": 244.042376
+        },
+        "after": {
+          "deltaBytes": 56040472,
+          "bytesPerUnit": 56.040472
+        },
+        "reductionPercent": 77.03658154844386
+      }
+    },
+    {
+      "name": "document-one-objectid",
+      "label": "deserialize document with one ObjectId",
+      "level": "per-instance",
+      "unit": "document",
+      "count": 1000000,
+      "samples": {
+        "before": [
+          {
+            "implementation": "before",
+            "workload": "document-one-objectid",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12675896,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30645492,
+              "rss": 61915136
+            },
+            "after": {
+              "heapUsed": 204861776,
+              "arrayBuffers": 33960380,
+              "liveMemory": 238822156,
+              "rss": 403783680
+            },
+            "deltaBytes": 208176664,
+            "bytesPerUnit": 208.176664
+          },
+          {
+            "implementation": "before",
+            "workload": "document-one-objectid",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12675792,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30645388,
+              "rss": 62226432
+            },
+            "after": {
+              "heapUsed": 204861672,
+              "arrayBuffers": 33960380,
+              "liveMemory": 238822052,
+              "rss": 403849216
+            },
+            "deltaBytes": 208176664,
+            "bytesPerUnit": 208.176664
+          },
+          {
+            "implementation": "before",
+            "workload": "document-one-objectid",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12675824,
+              "arrayBuffers": 17969596,
+              "liveMemory": 30645420,
+              "rss": 61947904
+            },
+            "after": {
+              "heapUsed": 204861704,
+              "arrayBuffers": 33960380,
+              "liveMemory": 238822084,
+              "rss": 401752064
+            },
+            "deltaBytes": 208176664,
+            "bytesPerUnit": 208.176664
+          }
+        ],
+        "after": [
+          {
+            "implementation": "after",
+            "workload": "document-one-objectid",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12627568,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30597262,
+              "rss": 61734912
+            },
+            "after": {
+              "heapUsed": 124762600,
+              "arrayBuffers": 17969694,
+              "liveMemory": 142732294,
+              "rss": 309395456
+            },
+            "deltaBytes": 112135032,
+            "bytesPerUnit": 112.135032
+          },
+          {
+            "implementation": "after",
+            "workload": "document-one-objectid",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12627568,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30597262,
+              "rss": 61620224
+            },
+            "after": {
+              "heapUsed": 124762600,
+              "arrayBuffers": 17969694,
+              "liveMemory": 142732294,
+              "rss": 309198848
+            },
+            "deltaBytes": 112135032,
+            "bytesPerUnit": 112.135032
+          },
+          {
+            "implementation": "after",
+            "workload": "document-one-objectid",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 12627568,
+              "arrayBuffers": 17969694,
+              "liveMemory": 30597262,
+              "rss": 61980672
+            },
+            "after": {
+              "heapUsed": 124762600,
+              "arrayBuffers": 17969694,
+              "liveMemory": 142732294,
+              "rss": 309870592
+            },
+            "deltaBytes": 112135032,
+            "bytesPerUnit": 112.135032
+          }
+        ]
+      },
+      "median": {
+        "before": {
+          "deltaBytes": 208176664,
+          "bytesPerUnit": 208.176664
+        },
+        "after": {
+          "deltaBytes": 112135032,
+          "bytesPerUnit": 112.135032
+        },
+        "reductionPercent": 46.13467722779917
+      }
+    },
+    {
+      "name": "documents-three-objectids",
+      "label": "deserialize documents with three ObjectIds",
+      "level": "process",
+      "unit": "document",
+      "count": 1000000,
+      "samples": {
+        "before": [
+          {
+            "implementation": "before",
+            "workload": "documents-three-objectids",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 4703912,
+              "arrayBuffers": 17969596,
+              "liveMemory": 22673508,
+              "rss": 53526528
+            },
+            "after": {
+              "heapUsed": 660985648,
+              "arrayBuffers": 65941948,
+              "liveMemory": 726927596,
+              "rss": 908443648
+            },
+            "deltaBytes": 704254088,
+            "bytesPerUnit": 704.254088
+          },
+          {
+            "implementation": "before",
+            "workload": "documents-three-objectids",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 4703912,
+              "arrayBuffers": 17969596,
+              "liveMemory": 22673508,
+              "rss": 53379072
+            },
+            "after": {
+              "heapUsed": 660985648,
+              "arrayBuffers": 65941948,
+              "liveMemory": 726927596,
+              "rss": 908476416
+            },
+            "deltaBytes": 704254088,
+            "bytesPerUnit": 704.254088
+          },
+          {
+            "implementation": "before",
+            "workload": "documents-three-objectids",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 4703912,
+              "arrayBuffers": 17969596,
+              "liveMemory": 22673508,
+              "rss": 53526528
+            },
+            "after": {
+              "heapUsed": 660985648,
+              "arrayBuffers": 65941948,
+              "liveMemory": 726927596,
+              "rss": 908492800
+            },
+            "deltaBytes": 704254088,
+            "bytesPerUnit": 704.254088
+          }
+        ],
+        "after": [
+          {
+            "implementation": "after",
+            "workload": "documents-three-objectids",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 4653248,
+              "arrayBuffers": 17969694,
+              "liveMemory": 22622942,
+              "rss": 53559296
+            },
+            "after": {
+              "heapUsed": 420817376,
+              "arrayBuffers": 17969694,
+              "liveMemory": 438787070,
+              "rss": 608272384
+            },
+            "deltaBytes": 416164128,
+            "bytesPerUnit": 416.164128
+          },
+          {
+            "implementation": "after",
+            "workload": "documents-three-objectids",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 4653248,
+              "arrayBuffers": 17969694,
+              "liveMemory": 22622942,
+              "rss": 53411840
+            },
+            "after": {
+              "heapUsed": 420817376,
+              "arrayBuffers": 17969694,
+              "liveMemory": 438787070,
+              "rss": 608436224
+            },
+            "deltaBytes": 416164128,
+            "bytesPerUnit": 416.164128
+          },
+          {
+            "implementation": "after",
+            "workload": "documents-three-objectids",
+            "count": 1000000,
+            "baseline": {
+              "heapUsed": 4653248,
+              "arrayBuffers": 17969694,
+              "liveMemory": 22622942,
+              "rss": 53379072
+            },
+            "after": {
+              "heapUsed": 420817376,
+              "arrayBuffers": 17969694,
+              "liveMemory": 438787070,
+              "rss": 608747520
+            },
+            "deltaBytes": 416164128,
+            "bytesPerUnit": 416.164128
+          }
+        ]
+      },
+      "median": {
+        "before": {
+          "deltaBytes": 704254088,
+          "bytesPerUnit": 704.254088
+        },
+        "after": {
+          "deltaBytes": 416164128,
+          "bytesPerUnit": 416.164128
+        },
+        "reductionPercent": 40.90710510721238
+      }
+    }
+  ]
+}

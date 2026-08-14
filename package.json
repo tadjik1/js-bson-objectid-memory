@@ -1,0 +1,20 @@
+{
+  "name": "js-bson-objectid-memory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reproducible memory measurements for the js-bson ObjectId representation change.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "benchmark": "node benchmark/run.js && node benchmark/summarize.js",
+    "benchmark:run": "node benchmark/run.js",
+    "summarize": "node benchmark/summarize.js"
+  },
+  "dependencies": {
+    "bson-after": "npm:bson@7.3.2",
+    "bson-before": "npm:bson@7.3.1"
+  },
+  "license": "MIT"
+}

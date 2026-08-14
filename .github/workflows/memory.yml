@@ -1,0 +1,80 @@
+name: Memory benchmark
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    name: Node.js ${{ matrix.node }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24, 26]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run benchmark
+        run: >-
+          npm run benchmark:run --
+          --output artifacts/node-${{ matrix.node }}.json
+          --repetitions 3
+
+      - name: Upload result
+        uses: actions/upload-artifact@v7
+        with:
+          name: node-${{ matrix.node }}-memory
+          path: artifacts/node-${{ matrix.node }}.json
+          if-no-files-found: error
+
+  summary:
+    name: Combined summary
+    needs: benchmark
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Download results
+        uses: actions/download-artifact@v7
+        with:
+          pattern: node-*-memory
+          path: artifacts
+          merge-multiple: true
+
+      - name: Build summary
+        run: >-
+          node benchmark/summarize.js
+          --input artifacts
+          --output artifacts/summary.md
+
+      - name: Add summary to workflow run
+        run: cat artifacts/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload combined results
+        uses: actions/upload-artifact@v7
+        with:
+          name: memory-results
+          path: artifacts
+          if-no-files-found: error
