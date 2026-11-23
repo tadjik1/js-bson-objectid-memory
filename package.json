@@ -13,6 +13,7 @@
     "summarize": "node benchmark/summarize.js"
   },
   "dependencies": {
+    "bson": "^7.3.2",
     "bson-after": "npm:bson@7.3.2",
     "bson-before": "npm:bson@7.3.1"
   },

@@ -23,6 +23,26 @@ after:
 
 Construction from a hex string measures the same as `new ObjectId()` on every version.
 
+## Object anatomy
+
+`benchmark/anatomy.js` decomposes the per-object costs behind these totals, using post-GC delta isolation with a V8 heap-snapshot cross-check:
+
+```bash
+node --expose-gc benchmark/anatomy.js
+```
+
+On Node.js 24 and 26 (64-bit, without pointer compression):
+
+| Object | Components | Total |
+| --- | --- | ---: |
+| `new Uint8Array(12)` | 104 B view + 96 B `ArrayBuffer` + 32 B on-heap store | 232 B |
+| `Buffer.allocUnsafe(12)` | 104 B view + 16 B pool slice | 120 B |
+| `bson@7.3.1` `new ObjectId()` | 32 B wrapper + 104 B view + 16 B pool slice | 152 B |
+| `bson@7.3.1` `new ObjectId(uint8Array)` | 32 B wrapper + 104 B view + 96 B `ArrayBuffer` + 12 B externalized store | 244 B |
+| `bson@7.3.2` `new ObjectId()` | 24 B object header + four 8 B field slots (Smi values inline) | 56 B |
+
+The heap-snapshot method reports the same shallow sizes (`Uint8Array` 104 B, `ArrayBuffer` 96 B, packed `ObjectId` 56 B). In the `uint8Array` construction path, wrapping the caller's `ArrayBuffer` in a `Buffer` externalizes its backing store, which is why 12 B move from the JS heap to the `arrayBuffers` counter. Node.js 22's older V8 uses slightly smaller components, which is why its totals in the results table are lower.
+
 ## Measurements
 
 The benchmark covers two levels.
